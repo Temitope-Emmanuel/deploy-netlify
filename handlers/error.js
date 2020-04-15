@@ -1,0 +1,10 @@
+function errHandler(err,req,res,next){
+    return res.status(err.status || 500).json({
+        error:{
+            message:err.message || "Call houston something went wrong"
+        }
+    })
+}
+
+
+module.exports = errHandler
