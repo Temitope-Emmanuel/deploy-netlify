@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
   },
   Date:{
     type:String,
-    required:true
+    // required:true
   },
   campground:[
     {

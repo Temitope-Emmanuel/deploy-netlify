@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 
 exports.signup = async function(req, res, next) {
     try {
+      console.log(`Reaching the sign up route`)
       let user = await db.User.create(req.body);
       let { id, username, profileImgUrl } = user;
       let token = jwt.sign(
@@ -34,6 +35,7 @@ exports.signup = async function(req, res, next) {
 
   exports.login = async function(req,res,next){
     try{
+      console.log(`Reaching the login route`)
       const foundUser = await db.User.findOne({
         email:req.body.email
       })
