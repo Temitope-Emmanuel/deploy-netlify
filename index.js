@@ -3,6 +3,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 const bodyParser = require("body-parser")
+const serverless = require("serverless-http")
 
 const PORT  = process.env.PORT || 8082
 
@@ -31,6 +32,11 @@ app.use(function(req,res,next){
 
 app.use(errHandler)
 
+
+
 app.listen(PORT,() => (
     console.log(`we are listening at port ${PORT}`)
-))
+    ))
+
+app.use('/.netlify/functions/api',router)
+module.exports.handler = serverless(app)
