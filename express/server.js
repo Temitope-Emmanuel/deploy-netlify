@@ -5,13 +5,11 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const serverless = require("serverless-http")
 
-// const PORT  = process.env.PORT || 8082
-
-const errHandler = require("./handlers/error")
-const authRoutes = require("./routes/auth.js")
-const campgroundRoutes = require("./routes/campgrounds")
-const commentRoutes = require("./routes/comment")
-const campgroundHandler = require("./handlers/campground")
+const errHandler = require("../handlers/error")
+const authRoutes = require("../routes/auth.js")
+const campgroundRoutes = require("../routes/campgrounds")
+const commentRoutes = require("../routes/comment")
+const campgroundHandler = require("../handlers/campground")
 
 app.use(cors())
 app.use(bodyParser.json())
