@@ -3,9 +3,9 @@ const mongoose =  require("mongoose")
 
 mongoose.connect(process.env.MONGODB_URI|| "mongodb://localhost/yelpcampv10",{
     keepAlive:true,
-    // useUnifiedTopology:true,
-    // useNewUrlParser:true,
-    // useFindAndModify:true
+    useUnifiedTopology:true,
+    useNewUrlParser:true,
+    useFindAndModify:true
 })
 
 

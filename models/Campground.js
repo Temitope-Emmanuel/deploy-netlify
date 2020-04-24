@@ -33,16 +33,16 @@ const campgroundSchema = new mongoose.Schema({
     }
 })
 
-campgroundSchema.pre("remove",async function(next){
-    try{
-        let foundUser = await this.db.User.findById(this.user)
-        await foundUser.campground.remove(this.id)
-        await foundUser.save();
-        return next()
-    }catch(e){
-        return next(e)
-    }
-})
+// campgroundSchema.pre("remove",async function(next){
+//     try{
+//         let foundUser = await this.db.User.findById(this.user)
+//         await foundUser.campground.remove(this.id)
+//         await foundUser.save();
+//         return next()
+//     }catch(e){
+//         return next(e)
+//     }
+// })
 
 const Campground = mongoose.model("Campground",campgroundSchema)
 module.exports = Campground

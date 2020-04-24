@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 const express = require("express")
 const app = express()
 const cors = require("cors")
@@ -33,6 +33,5 @@ app.use(errHandler)
 
 
 
-// app.use('/.netlify/functions/api',router)
 module.exports = app
 module.exports.handler = serverless(app)
